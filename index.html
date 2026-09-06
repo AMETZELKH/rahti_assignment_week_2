@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rahti Assignment</title>
+</head>
+
+<body>
+
+<h1>Part 1 Answers of questions</h1>
+
+<h2>1. What is Serverless Architecture?</h2>
+<p>
+    In basic, Serverless Architecture is an application architecture in which the application developer does not have to manage 
+    or maintain the underlying servers and infrastructure. Unlike its name, it dose not means there are not actual servers. 
+    The servers still exist and the application still runs on physical or virtual machines, but the responsibility for managing these kind of things is taken 
+    from developers to a cloud provider. With that, developers can focus solely on their application logic and code.
+</p>
+<p>
+    Therefore, the main difference between serverless and traditional server-based architecture is who manages the infrastructure 
+    and how the application is executed. In a traditional architecture, developers or system administrators may have to provision 
+    servers, configure operating systems, manage capacity, apply updates, and keep services running. But with serverless, these 
+    infrastructure tasks are largely abstracted away by the cloud provider, which can also automatically scale the application 
+    according to demand. A common way of implementing serverless architecture is through Function as a Service (FaaS). 
+    This means instead of running a continuously active application server, an application can be divided into individual functions 
+    that are executed when they are needed. Take a shopping application as an example, one function might process a payment, 
+    another might send a confirmation email, and when an event occurs, the relevant function is started and executed by the cloud platform. 
+</p>
+<p>
+    With mentioned above, the advantages of this kind of architecture include automatic scaling, reduced infrastructure management and costs, 
+    and potentially lower costs when workloads are intermittent because resources are generally used only when needed. Also, with these advantages,  
+    it has limitations such as execution limits, possible startup delays, dependence on a cloud provider and less control over the underlying infrastructure. 
+    But still, its own unique area of advantage allows it to be applied in mutiple fields. 
+</p>
+
+
+<h2>2. When it is more feasible solution to use application containers (app virtualization) than full OS virtualization to provide networked services?</h2>
+<p>
+    When the main goal is to deploy and run multiple networked services efficiently while keeping resource consumption and 
+    management overhead low, containers are a more feasible solution than full OS virtualization. Because containers share the host 
+    operating system kernel, each of them does not need to run a complete guest operating system. This means that a single 
+    physical or virtual server can usually run more services with less memory and CPU overhead than if each service were placed 
+    in a separate virtual machine. This means that a single physical or virtual server can usually run more services with less memory and CPU overhead than if each service were placed in a separate virtual machine. 
+    And also because of that, they could start faster, which is useful when networked services need to be started, stopped, or scaled frequently. 
+    And when the services need to be deployed and updated independently, containers are still useful. Taking this as an example, 
+    a server might provide a web service, a database service, a background processing service and so on. Each of them can be packaged as a separate container and managed independently, 
+    so that if one of them needs to be updated or scaled, it can be changed without having to create an entire VM for it. Another advantage is that Containers package an application 
+    together with its dependencies and runtime environment, making it easier to deploy the same service consistently across development, 
+    testing and production environments. With that, you can deploy them in different environment or machine and still works well. 
+    But also, Full OS virtualization is more appropriate when strong isolation is required, when different services need different operating systems or kernels, 
+    or when the workload depends on features that cannot easily be provided within a environment that shared kernel. Therefore, choose according to your needs.
+</p>
+
+
+<h2>3. Compare application containers to microservices</h2>
+<p>
+    Microservices is an architectural aim to designing software, as well as containers are a technology for packaging and running software in an isolated environment. 
+    In general, a microservice architecture is an architectural pattern that organizes an application into a collection of loosely coupled, fine-grained 
+    services that communicate through lightweight protocols. This pattern allows teams to develop, deploy, and scale services 
+    independently, improving modularity, scalability, and adaptability. Each service is responsible for a specific function and 
+    can be developed, deployed, and scaled independently. For example, an application might have separate services for user authentication, 
+    profile management and payment processing. Each of these services communicates with the others through defined interfaces like APIs. 
+    Unlike this, a container is an isolated runtime environment that packages an application together with its dependencies and the software needed to run it, 
+    such as a payment service could be packaged into a container containing its application code, libraries and runtime environment, 
+    make it could be deployed across different environments. The main difference between them is that microservices are mainly about 
+    the architecture and organization of the application, while containers are about the packaging and deployment of the 
+    application. A microservice does not have to run in a container. It could instead run directly on a physical server, 
+    inside a virtual machine, or using a serverless platform. Similarly, a container does not have to contain a microservice. 
+    A container can contain a traditional monolithic application as well. But nevertheless, they could be used together. 
+    A common approach is to package each microservice into its own container and use a container orchestration platform 
+    to deploy and manage them. This combination will make it easier to independently deploy, scale, and update individual parts of an application. 
+    They are kind of similar, but are different concepts, and can be combine to achieve more efficient development.
+</p>
+
+<h2>4. Describe shortly what is Kubernetes and what alternatives are there?</h2>
+<p>
+    Kubernetes is an open-source container orchestration platform used to deploy, manage, and scale containerized applications 
+    across a cluster of machines. Instead of manually starting and managing many individual containers, Kubernetes automates tasks 
+    such as scheduling containers, restarting failed containers, scaling applications, service discovery, and distributing 
+    traffic between instances. The development of Kubernetes was largely driven by the growing use of containers and the difficulty 
+    of managing them at scale. Running a few containers on a single machine is relatively simple, but when an application 
+    consists of hundreds or thousands of containers distributed across many machines, manually managing them becomes impractical. 
+    So Kubernetes was developed to address this problem. Taking this as an example, if a web application is running in several 
+    containers, Kubernetes can automatically start the required number of containers, distribute them across available machines, 
+    restart containers if they fail, and create more instances when demand increases.
+</p>
+<p>
+    There are several alternatives to Kubernetes, depending on the requirements. Docker Swarm Docker's own container orchestration technology, 
+    which is simpler and closely integrated with Docker, making it suitable for smaller environments.HashiCorp Nomad is a workload orchestrator 
+    that can manage containers as well as other types of workloads, which has a relatively simple architecture and can manage both containers 
+    and other types of workloads. Amazon ECS is a managed AWS service that provides container orchestration with close integration 
+    with other AWS services. And many Cloud providers also offer managed Kubernetes services such as EKS, AKS, and GKE. These are 
+    managed versions of Kubernetes rather than completely different alternatives.
+</p>
+
+<h2>Part 2 Deploying a Containerized Web App on CSC Rahti</h2>
+
+<p>
+<!-- Here I describe how I deployed this web application
+to CSC Rahti. -->
+</p>
+
+<h2>References</h2>
+
+<ul>
+    <li>CSC Rahti Documentation</li>
+    <li>Kubernetes Documentation</li>
+    <li>Docker Documentation</li>
+</ul>
+
+</body>
+</html>
